@@ -7,6 +7,17 @@ let g:ctrlp_cmd = 'CtrlP'
 " 设置过滤不进行查找的后缀名
 let g:ctrlp_custom_ignore = '\v[\/]\.(git)$'
 
+" 设置跳转到方法/函数定义的快捷键
+nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" 触发补全快捷键
+let g:ycm_key_list_select_completion = ['<TAB>', '<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>', '<c-p>', '<Up>']
+let g:ycm_auto_trigger = 1
+" 最小自动触发补全的字符大小设置为 3
+let g:ycm_min_num_of_chars_for_completion = 3
+" YCM的previw窗口比较恼人，还是关闭比较好
+set completeopt-=preview
+
 " 设置包括vundle和初始化相关的runtime path
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -16,6 +27,7 @@ call vundle#begin()
 " 让vundle管理插件版本,必须
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 " 以下范例用来支持不同格式的插件安装.
 " 请将安装插件的命令放在vundle#begin和vundle#end之间.
