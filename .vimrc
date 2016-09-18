@@ -28,6 +28,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " 以下范例用来支持不同格式的插件安装.
 " 请将安装插件的命令放在vundle#begin和vundle#end之间.
